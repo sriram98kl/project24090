@@ -716,7 +716,7 @@ public void ADTAppoval(String MRNO , String nurseUser,String Password,String URL
 public void financialClearance(String MRNO , String nurseUser,String Password,String URL, String Site) throws InterruptedException {
 	
 
-	Thread.sleep(1000);
+	Thread.sleep(2000);
 	Hamberger.click();
 	Thread.sleep(1000);
 	EMR.click();

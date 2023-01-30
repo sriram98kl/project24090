@@ -27,7 +27,7 @@ public class SP5_MISReport_AdmissionDischarge_TestCase extends TestBaseYasasiiWe
 	public void navigateFOPage() throws InterruptedException {
 		
 	this.login =new LoginPageYasasiiWeb(driver) ;
-	this.hm = login.enterloginDetails("admin", "kameda321", "Kameda Medical Center");
+	this.hm = login.enterloginDetails("admin", "KAmeda123$", "Kameda Medical Center");
 	Thread.sleep(2000); 
 	}
 

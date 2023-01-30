@@ -114,7 +114,7 @@ public class BlockandFreezeYasasiiWeb extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath="//button[@id='blockscheduleupdateid']")
 	public WebElement blockUpdate;
 
-	@FindBy(xpath="//button[@aria-label='Ok'][normalize-space()='OK']//i[@class='ki ki-check']")
+	@FindBy(xpath="//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")
 	public WebElement RescheduleOK;
 
 
@@ -139,7 +139,7 @@ public class BlockandFreezeYasasiiWeb extends PageFactoryInitYasasiiWeb{
      @FindBy(xpath="//button[normalize-space()='Cancel Appointment']")
 	public WebElement cancelApp;
 
-    @FindBy(xpath="//ki-select-control[@placeholder='Reason/Reporting Status']//input[@id='undefined']")
+    @FindBy(xpath="/html[1]/body[1]/modal-container[1]/div[1]/div[1]/lib-appointment-modal[1]/div[2]/div[3]/div[1]/div[1]/ki-select-control[1]/div[1]/input[1]")
 	public WebElement ReasonREporting;
 
 	@FindBy(xpath="//tr[@class='row-0-0 ng-star-inserted']//i[@class='ki ki-close']")
@@ -203,7 +203,7 @@ public class BlockandFreezeYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		//Robot r=new Robot(); 
 		r.keyPress(KeyEvent.VK_ENTER);
 		r.keyRelease(KeyEvent.VK_ENTER);
-		Thread.sleep(800);
+		Thread.sleep(1000);
 
 		todate.click();
 		r.keyPress(KeyEvent.VK_RIGHT);
@@ -241,13 +241,18 @@ public class BlockandFreezeYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		save.click();
 		Thread.sleep(3000); 
 
+		
+		
 		//// refreshing the tab
-		driver.navigate().refresh();
+		driver.findElement(By.xpath("//i[@class='ki ki-refresh']")).click();
+		Thread.sleep(2000);
+		
+	/*	driver.navigate().refresh();
 		Thread.sleep(1000);
 		r.keyPress(KeyEvent.VK_ENTER);
 		r.keyRelease(KeyEvent.VK_ENTER);
 		Thread.sleep(800);
-		Thread.sleep(1000);
+		Thread.sleep(1000);   */
 
 
 
@@ -373,21 +378,25 @@ public class BlockandFreezeYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		blockUpdate.click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+		//driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
 		Thread.sleep(1000);
 		RescheduleOK.click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//button[@aria-label='Ok'][normalize-space()='OK']")).click();
+		Thread.sleep(1000);
 		Thread.sleep(1000);
 		driver.switchTo().window(tabs.get(p));
 		Thread.sleep(2000);
 
 		//// refreshing the tab
-		driver.navigate().refresh();
-		Thread.sleep(2000);
-		r.keyPress(KeyEvent.VK_ENTER);
-		Thread.sleep(800);
-		r.keyRelease(KeyEvent.VK_ENTER);
-		Thread.sleep(800);
-		Thread.sleep(1000);
+//		driver.navigate().refresh();
+//		Thread.sleep(2000);
+//		r.keyPress(KeyEvent.VK_ENTER);
+//		Thread.sleep(800);
+//		r.keyRelease(KeyEvent.VK_ENTER);
+//		Thread.sleep(800);
+//		Thread.sleep(1000);
+		
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='maincategory']")));
 
 		Maincategory.click();
@@ -426,6 +435,8 @@ public class BlockandFreezeYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//tr[@class='row-0-0 ng-star-inserted']//i[@class='ki ki-plus']")).click();
 		Thread.sleep(1000);
+		//driver.findElement(By.xpath("//ki-dialog-common//i[@class='ki ki-check']")).click();
+		Thread.sleep(1000);
 		REshedulereason.click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='Doctor on Leave']")).click();
@@ -440,11 +451,18 @@ public class BlockandFreezeYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
 		Thread.sleep(1000);
 		//// refreshing the tab
-		driver.navigate().refresh();
-		Thread.sleep(1000);
-		r.keyPress(KeyEvent.VK_ENTER);
-		r.keyRelease(KeyEvent.VK_ENTER);
-		Thread.sleep(800);
+		
+	//	driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
+		
+		
+	//	driver.navigate().refresh();
+//		Thread.sleep(1000);
+//		r.keyPress(KeyEvent.VK_ENTER);
+//		r.keyRelease(KeyEvent.VK_ENTER);
+	Thread.sleep(800);
+		
+		driver.findElement(By.xpath("//i[@id='refresh']")).click();
+		
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='maincategory']")));
 
@@ -608,7 +626,7 @@ public class BlockandFreezeYasasiiWeb extends PageFactoryInitYasasiiWeb{
 
 		driver.switchTo().window(tabs.get(p));
 		
-		/////FO
+		/////FO  IPblock
 		Thread.sleep(2000);
 		Maincategory.click();
 		Thread.sleep(1000);

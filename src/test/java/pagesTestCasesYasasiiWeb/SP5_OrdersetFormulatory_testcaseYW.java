@@ -1,5 +1,6 @@
 package pagesTestCasesYasasiiWeb;
 
+import java.awt.AWTException;
 import java.io.IOException;
 
 import org.testng.annotations.AfterClass;
@@ -30,7 +31,7 @@ public class SP5_OrdersetFormulatory_testcaseYW  extends TestBaseYasasiiWeb  {
 	
 
 	@Test (dataProvider = "getData")
-	public void orderset(String ORDERNAME,String URL , String User ,String Password,String sitename, String MRNO , String medicine) throws InterruptedException, IOException {
+	public void orderset(String ORDERNAME,String URL , String User ,String Password,String sitename, String MRNO , String medicine) throws InterruptedException, IOException, AWTException {
 		
 		
 		SP5_OrdersetFormulatory_YasassiWeb os = new SP5_OrdersetFormulatory_YasassiWeb(driver);

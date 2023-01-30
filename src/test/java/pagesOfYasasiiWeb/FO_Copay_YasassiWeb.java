@@ -141,7 +141,7 @@ public class FO_Copay_YasassiWeb  extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath = "//i[@class='ki ki-pencil']")
 	public WebElement edit;
 	
-	@FindBy(xpath = "//div[@class='ng-star-inserted']//i[@class='ki ki-pencil']")
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-frontoffice-patientregistration[1]/div[1]/form[1]/div[1]/div[2]/accordion[1]/accordion-group[4]/div[1]/div[2]/div[1]/app-insurance[1]/form[1]/div[7]/div[1]/div[2]/div[1]/div[1]/div[3]/label[1]/i[1]")
 	public WebElement SchemeEdit;
 	
 	@FindBy(xpath = "//button[@id='updateregistrationbutton']")
@@ -389,7 +389,7 @@ List<WebElement> dynamicElement=driver.findElements(By.xpath("//*[@class='requir
 		Robot r=new Robot();
 		r.keyPress(KeyEvent.VK_ENTER);
 		r.keyRelease(KeyEvent.VK_ENTER);
-		Thread.sleep(800);	
+		Thread.sleep(1200);	
 		ToDate.click();
 		Thread.sleep(1000);
 		r.keyPress(KeyEvent.VK_RIGHT);
@@ -403,8 +403,10 @@ List<WebElement> dynamicElement=driver.findElements(By.xpath("//*[@class='requir
 		driver.findElement(By.xpath("//label[contains(@class,'check-container zero-bottom')]//span[contains(@class,'checkmark')]")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//label[contains(@class,'check-container zero-bottom')]//span[contains(@class,'checkmark')]")).click();
-		
+		Thread.sleep(1000);
 		letterOk.click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//span[@class='checkmark']")).click();
 		Thread.sleep(1000);
 		saveBilling.click();
 		Thread.sleep(3000);
@@ -484,7 +486,7 @@ List<WebElement> dynamicElement=driver.findElements(By.xpath("//*[@class='requir
 		driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Close'][normalize-space()='No']")).click();
 		Thread.sleep(2000);
 		//Billing.click();
-		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-patient-view[1]/form[1]/div[1]/div[1]/div[2]/div[1]/div[1]/label[1]/i[1]")).click();
+		driver.findElement(By.xpath("//div[contains(text(),'Billing')]")).click();
 		Thread.sleep(2000);
 		Referenceletterview.click();
 		Thread.sleep(3000);
@@ -501,8 +503,10 @@ List<WebElement> dynamicElement=driver.findElements(By.xpath("//*[@class='requir
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].scrollIntoView();",Scheme);
 		Thread.sleep(1000);
-		Scheme.click();
+		act.moveToElement(Scheme).click().build().perform();
 		Thread.sleep(1000);
+		Scheme.click();
+		Thread.sleep(3000);
 		SchemeEdit.click();
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].scrollIntoView();",validto);
@@ -554,8 +558,9 @@ List<WebElement> dynamicElement=driver.findElements(By.xpath("//*[@class='requir
 		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
 		Thread.sleep(1000);
 		search.clear();
-		Thread.sleep(1000);
+		Thread.sleep(1000);  
 
+		
 		
 		///////StayPass
 		
@@ -573,11 +578,13 @@ List<WebElement> dynamicElement=driver.findElements(By.xpath("//*[@class='requir
 		AdvNOSearch.sendKeys(MRNO);
 		Thread.sleep(1000);
 		SearchIcon.click();
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNO+"')])[1]")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("/html[1]/body[1]/modal-container[2]/div[1]/div[1]/div[1]/div[1]/lib-patientlist[1]/form[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]")).click();
+		
+	///	driver.findElement(By.xpath("//span[normalize-space()='"+MRNO+"']")).click();
 		Thread.sleep(1000);
 		Print.click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		Robot t=new Robot();
 		Thread.sleep(1000);
 		t.keyPress(KeyEvent.VK_ESCAPE);
@@ -586,7 +593,7 @@ List<WebElement> dynamicElement=driver.findElements(By.xpath("//*[@class='requir
 		Thread.sleep(2000);
 		
 		///PREVIOUS WINDOW
-		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+	/*	ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
 		int n =driver.getWindowHandles().size();
 		Thread.sleep(1000);
 		System.out.println("window handles no."+ n);
@@ -595,17 +602,17 @@ List<WebElement> dynamicElement=driver.findElements(By.xpath("//*[@class='requir
 		System.out.println("go to window no."+ m);
 		Thread.sleep(1000);
 		driver.switchTo().window(tabs.get(m));
-		Thread.sleep(1000);
+		Thread.sleep(1000); */
 		
 		
 		currentpassprint.click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		t.keyPress(KeyEvent.VK_ESCAPE);
 		Thread.sleep(1000);
 		t.keyRelease(KeyEvent.VK_ESCAPE);
 		Thread.sleep(1000);
 	
-		ArrayList<String> tabs1 = new ArrayList<String>(driver.getWindowHandles());
+	/*	ArrayList<String> tabs1 = new ArrayList<String>(driver.getWindowHandles());
 		int Y =driver.getWindowHandles().size();
 		Thread.sleep(1000);
 		System.out.println("window handles no."+ Y);
@@ -613,7 +620,7 @@ List<WebElement> dynamicElement=driver.findElements(By.xpath("//*[@class='requir
 		Thread.sleep(1000);
 		System.out.println("go to window no."+ Z);
 		Thread.sleep(2000);
-		driver.switchTo().window(tabs1.get(Z));
+		driver.switchTo().window(tabs1.get(Z));   */
 		
 		
 		Thread.sleep(1000);

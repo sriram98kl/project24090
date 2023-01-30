@@ -1,4 +1,7 @@
 package pagesTestCasesYasasiiWeb;
+import java.awt.AWTException;
+import java.io.IOException;
+
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
@@ -17,13 +20,27 @@ public static HomePageYasasiiWeb hm;
 public void navigateemradt() throws InterruptedException {
 	
 	this.login =new LoginPageYasasiiWeb(driver) ;
-	this.hm = login.enterloginDetails("3", "KAmeda123$", "Kameda Medical Center");
+	this.hm = login.enterloginDetails("admin", "kameda321", "Kameda Medical Center");
 	Thread.sleep(3000);
 	
 }
 
-@Test(dataProvider="getData")
-public void EMRADT(String firstname,String gender,String age,String encounter,String MRNo , String docnomb) throws InterruptedException {
+@Test(dataProvider="getData" , priority=0)
+public void aptreg(String firstname,String gender,String age,String encounter,String MRNo , String docnomb,String TITLE ,String NAME , String AGE , String MBLNO ,String ENCdoc,String Docid , String DOCPassword,String Site) throws InterruptedException, AWTException, IOException {
+		Thread.sleep(2000);
+		
+		EMRADTYasasiiWeb Schedule = new EMRADTYasasiiWeb(driver);
+		Schedule.ERpatientAdmit(TITLE, NAME, AGE, MBLNO);
+		Schedule.encounter(ENCdoc, Site, Docid, DOCPassword);
+		
+		
+		
+		}
+
+
+
+@Test(dataProvider="getData" , priority=1)
+public void EMRADT(String firstname,String gender,String age,String encounter,String MRNo , String docnomb,String TITLE ,String NAME , String AGE , String MBLNO,String ENCdoc,String Docid , String DOCPassword,String Site) throws InterruptedException, AWTException {
 		Thread.sleep(2000);
 		
 		EMRADTYasasiiWeb Schedule = new EMRADTYasasiiWeb(driver);

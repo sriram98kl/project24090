@@ -338,9 +338,48 @@ public class Sp5_pathology_FrozenYasasiiWeb extends  PageFactoryInitYasasiiWeb {
 
 	@FindBy(xpath="/html[1]/body[1]/modal-container[1]/div[1]/div[1]/div[2]/app-reportgeneration[1]/div[1]/div[1]/form[1]/div[1]/div[4]/div[1]/div[1]/div[2]/ki-editor[1]/div[1]/div[2]/div[1]")
 	public WebElement frozenreport;
+	
 	@FindBy(xpath="//label[normalize-space()='Final Report']//span[@class='checkmark']")
 	public WebElement finalreport;
 
+	@FindBy(xpath="//label[normalize-space()='Physically Challenged']//span[@class='checkmark']")
+	public WebElement physicallyDisabled;
+	
+	@FindBy(xpath="//label[normalize-space()='Mentally Challenged']//span[@class='checkmark']")
+	public WebElement mentallychallenged;
+	
+	@FindBy(xpath="//label[normalize-space()='Hearing Impaired']//span[@class='checkmark']")
+	public WebElement hearingimpaired;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	public void patReg(String NAME , String AGE , String MBLNO , String ORGANISATION , String ADDRESS , String AADHAAR,String MRNO ,String PROVIDER ,String SERVICE) throws InterruptedException, IOException {
 
@@ -374,6 +413,14 @@ public class Sp5_pathology_FrozenYasasiiWeb extends  PageFactoryInitYasasiiWeb {
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='KIMS']")).click();
 		Thread.sleep(1000);
+		
+		physicallyDisabled.click();
+		Thread.sleep(400);
+		mentallychallenged.click();
+		Thread.sleep(400);
+		hearingimpaired.click();
+		Thread.sleep(1000);
+		
 		ContactInformation.click();
 		Thread.sleep(1000);
 		address.click();

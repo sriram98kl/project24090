@@ -206,8 +206,8 @@ public class Sp5_EMR_FamilyMembersYasasiiWeb extends  PageFactoryInitYasasiiWeb 
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//div[@class='col-md-12']//i[@title='Search']")).click();
 		Thread.sleep(2000);
-		WebDriverWait wait = new WebDriverWait(driver,30);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//i[@class='fa fa-chevron-down arrow ng-star-inserted'])[25]")));
+	//	WebDriverWait wait = new WebDriverWait(driver,30);
+		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//i[@class='fa fa-chevron-down arrow ng-star-inserted'])[25]")));
 		
 		relation.click();
 		Thread.sleep(2000);
@@ -222,7 +222,7 @@ public class Sp5_EMR_FamilyMembersYasasiiWeb extends  PageFactoryInitYasasiiWeb 
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//div[@class='col-md-12']//i[@title='Search']")).click();
 		Thread.sleep(2000);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//i[@class='fa fa-chevron-down arrow ng-star-inserted'])[25]")));
+		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//i[@class='fa fa-chevron-down arrow ng-star-inserted'])[25]")));
 		relation.click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//li[normalize-space()='Daughter']")).click();
@@ -236,7 +236,7 @@ public class Sp5_EMR_FamilyMembersYasasiiWeb extends  PageFactoryInitYasasiiWeb 
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//div[@class='col-md-12']//i[@title='Search']")).click();
 		Thread.sleep(2000);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//i[@class='fa fa-chevron-down arrow ng-star-inserted'])[25]")));
+	//	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//i[@class='fa fa-chevron-down arrow ng-star-inserted'])[25]")));
 		relation.click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//li[normalize-space()='Daughter']")).click();
@@ -250,7 +250,7 @@ public class Sp5_EMR_FamilyMembersYasasiiWeb extends  PageFactoryInitYasasiiWeb 
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//div[@class='col-md-12']//i[@title='Search']")).click();
 		Thread.sleep(2000);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//i[@class='fa fa-chevron-down arrow ng-star-inserted'])[25]")));
+	//	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//i[@class='fa fa-chevron-down arrow ng-star-inserted'])[25]")));
 		relation.click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//li[normalize-space()='Daughter']")).click();
@@ -264,7 +264,7 @@ public class Sp5_EMR_FamilyMembersYasasiiWeb extends  PageFactoryInitYasasiiWeb 
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//div[@class='col-md-12']//i[@title='Search']")).click();
 		Thread.sleep(2000);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//i[@class='fa fa-chevron-down arrow ng-star-inserted'])[25]")));
+	//	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//i[@class='fa fa-chevron-down arrow ng-star-inserted'])[25]")));
 		relation.click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//li[normalize-space()='Daughter']")).click();

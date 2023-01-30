@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
   <test thread-count="5" verbose="5" name="Test">
-    <classes>
+      <classes>
       <class name="pagesTestCasesYasasiiWeb.SP5_MISReport_AdmissionDischarge_TestCase"/>
       <class name="pagesTestCasesYasasiiWeb.BlockandFreezeTestCasesYW"/>
       <class name="pagesTestCasesYasasiiWeb.SP5_Inclinic_TestcaseYW"/>

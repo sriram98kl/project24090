@@ -1,5 +1,6 @@
 package pagesTestCasesYasasiiWeb;
 
+import java.awt.AWTException;
 import java.io.IOException;
 
 import org.testng.annotations.AfterClass;
@@ -31,7 +32,7 @@ public class SP5_DialysisNote_TestcaseYW extends TestBaseYasasiiWeb{
 	
 	
 	@Test (dataProvider = "getData", priority=0)
-	public void PAtreg(String NAME,String AGE, String MBLNO , String ORGANISATION, String ADDRESS , String AADHAAR , String PROVIDER,String URL, String User,String Password,String site, String MRNO,String Service) throws InterruptedException, IOException {
+	public void PAtreg(String NAME,String AGE, String MBLNO , String ORGANISATION, String ADDRESS , String AADHAAR , String PROVIDER,String URL, String User,String Password,String site, String MRNO,String Service) throws InterruptedException, IOException, AWTException {
 		
 		Thread.sleep(3000); 
 		

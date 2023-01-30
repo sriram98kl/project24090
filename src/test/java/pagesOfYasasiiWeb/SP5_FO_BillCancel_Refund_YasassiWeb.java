@@ -327,8 +327,9 @@ public class SP5_FO_BillCancel_Refund_YasassiWeb extends PageFactoryInitYasasiiW
 	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-patient-view[1]/form[1]/div[2]/app-billing-overview[1]/div[1]/div[2]/app-encounter-billing[1]/tabset[1]/div[1]/tab[1]/div[1]/div[1]/app-billing-details[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[2]/ki-select-control[1]/div[1]/input[1]")
 	public WebElement Servicename;
 	
+	@FindBy(xpath = "//span[@class='checkmark']")
+	public WebElement printCheck;
 	
-
 
 
 
@@ -360,7 +361,9 @@ public class SP5_FO_BillCancel_Refund_YasassiWeb extends PageFactoryInitYasasiiW
 		Thread.sleep(1000);
 		Category.click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//span[@title='Staff']")).click();
+		driver.findElement(By.xpath("//span[@title='Normal']")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//span[@title='VVIP']")).click();
 		Thread.sleep(1000);
 		ContactInformation.click();
 		Thread.sleep(1000);
@@ -389,9 +392,9 @@ public class SP5_FO_BillCancel_Refund_YasassiWeb extends PageFactoryInitYasasiiW
 
 			Robot r=new Robot();
 			r.keyPress(KeyEvent.VK_LEFT);
-			Thread.sleep(800);
+			Thread.sleep(100);
 			r.keyRelease(KeyEvent.VK_LEFT);
-					Thread.sleep(100);
+					
 		}
 		
 		Thread.sleep(1000);
@@ -402,9 +405,9 @@ public class SP5_FO_BillCancel_Refund_YasassiWeb extends PageFactoryInitYasasiiW
 
 			Robot r=new Robot();
 			r.keyPress(KeyEvent.VK_LEFT);
-			Thread.sleep(800);
+			Thread.sleep(100);
 			r.keyRelease(KeyEvent.VK_LEFT);
-	    	Thread.sleep(100);
+	    	
 					
 					
 					
@@ -417,9 +420,9 @@ public class SP5_FO_BillCancel_Refund_YasassiWeb extends PageFactoryInitYasasiiW
 		for (int i = 0; i <10; i++) {
 			Robot r=new Robot();
 			r.keyPress(KeyEvent.VK_LEFT);
-			Thread.sleep(800);
+			Thread.sleep(100);
 			r.keyRelease(KeyEvent.VK_LEFT);
-					Thread.sleep(100);
+					
 
 		}
 
@@ -452,6 +455,7 @@ public class SP5_FO_BillCancel_Refund_YasassiWeb extends PageFactoryInitYasasiiW
 		String mrno= driver.findElement(By.xpath("//span[@class='pat-mrno']")).getText();
 		System.out.println(mrno);
 		Thread.sleep(2000);
+		
 		//		String word[]=mrno.split("[ :] ");
 		//		System.out.println("number of words: "+word.length);
 		//		for(int i=0;i<word.length;i++)
@@ -498,6 +502,8 @@ public class SP5_FO_BillCancel_Refund_YasassiWeb extends PageFactoryInitYasasiiW
 		Thread.sleep(1000);
 		clear.click();
 		Thread.sleep(1000);
+		printCheck.click();
+		Thread.sleep(1000);
 		regAdd.click();
 		Thread.sleep(1000);
 		EncounterSave.click();
@@ -512,11 +518,15 @@ public class SP5_FO_BillCancel_Refund_YasassiWeb extends PageFactoryInitYasasiiW
         Thread.sleep(1000);
 		EncounterAdd.click();
 		Thread.sleep(1000);
+		printCheck.click();
+		Thread.sleep(1000);
 		EncounterSave.click();
 		Thread.sleep(1000);
 		SAvesuccess.click();
 		Thread.sleep(3000);
 
+		
+		
 ////////followup bill
 		
 		Servicename.click();
@@ -524,6 +534,8 @@ public class SP5_FO_BillCancel_Refund_YasassiWeb extends PageFactoryInitYasasiiW
 		driver.findElement(By.xpath("//li[normalize-space()='Follow-up Consultation']")).click();
 		Thread.sleep(1000);
 		EncounterAdd.click();
+		Thread.sleep(1000);
+		printCheck.click();
 		Thread.sleep(1000);
 		EncounterSave.click();
 		Thread.sleep(1000);
@@ -575,8 +587,11 @@ public class SP5_FO_BillCancel_Refund_YasassiWeb extends PageFactoryInitYasasiiW
 		//AdvanceView.click();
 
 		Thread.sleep(3000);
-
-		List<WebElement> dynamicElement2=driver.findElements(By.xpath("//i[@class='ki ki-cash-transfer']"));
+		driver.findElement(By.xpath("//label[normalize-space()='Cash']//span[@class='checkmark']")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//i[@class='ki ki-search text-white']")).click();
+		Thread.sleep(1000);
+		List<WebElement> dynamicElement2=driver.findElements(By.xpath("//label[@title='Request for Cancellation']"));
 
 		int k =	dynamicElement2.size();
 		System.out.println("size of k="+k);
@@ -584,16 +599,19 @@ public class SP5_FO_BillCancel_Refund_YasassiWeb extends PageFactoryInitYasasiiW
 		int i = k-1;
 		System.out.println(i);
 		Thread.sleep(3000);
-
+		
+		
+		
+		
 		WebDriverWait wait = new WebDriverWait(driver,30);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//tbody/tr[1]/td[1]/label[2]/i[1]")));
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//tbody/tr["+i+"]/td[1]/label[3]/span[1]/ki-checkbox-control[1]/label[1]/label[1]/span[1]")).click();
-		// Checkbox.click();
+		driver.findElement(By.xpath("//tbody/tr[1]/td[1]/label[3]/span[1]/ki-checkbox-control[1]/label[1]/label[1]/span[1]")).click();
+	//	driver.findElement(By.xpath("//tbody/tr["+k+"]/td[1]/label[3]/span[1]/ki-checkbox-control[1]/label[1]/label[1]/span[1]")).click();
+		// Checkbox.click();//tbody/tr[1]/td[1]/label[3]/span[1]/ki-checkbox-control[1]/label[1]/label[1]/span[1]
 		Thread.sleep(3000);
-
-		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-patient-view[1]/form[1]/div[2]/app-billing-overview[1]/div[1]/div[2]/app-availed-services[1]/div[1]/form[1]/div[2]/tabset[1]/div[1]/tab[1]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr["+i+"]/td[1]/label[3]/span[2]/label[1]/span[1]/i[1]")).click();
-		// request.click();                                                                                                                                                                                                                                                                                    //tbody/tr[2]/td[1]/label[3]/span[2]/label[1]/span[1]/i[1]                                                                                                                                                                                                                                                                       
+		driver.findElement(By.xpath("(//label[@title='Request for Cancellation'])[1]")).click();
+		// request.click();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
 		Thread.sleep(1000);
 		auth.click();
 		Thread.sleep(1000);
@@ -630,11 +648,11 @@ public class SP5_FO_BillCancel_Refund_YasassiWeb extends PageFactoryInitYasasiiW
 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//tbody/tr[1]/td[1]/label[2]/i[1]")));
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//tbody/tr["+i+"]/td[1]/label[3]/span[1]/ki-checkbox-control[1]/label[1]/label[1]/span[1]")).click();
+		driver.findElement(By.xpath("//tbody/tr[1]/td[1]/label[3]/span[1]/ki-checkbox-control[1]/label[1]/label[1]/span[1]")).click();
 		// Checkbox.click();
 		Thread.sleep(3000);
 
-		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-patient-view[1]/form[1]/div[2]/app-billing-overview[1]/div[1]/div[2]/app-availed-services[1]/div[1]/form[1]/div[2]/tabset[1]/div[1]/tab[1]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr["+i+"]/td[1]/label[3]/span[2]/label[1]/span[1]/i[1]")).click();
+		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-patient-view[1]/form[1]/div[2]/app-billing-overview[1]/div[1]/div[2]/app-availed-services[1]/div[1]/form[1]/div[2]/tabset[1]/div[1]/tab[1]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/label[3]/span[2]/label[1]/span[1]/i[1]")).click();
 		// request.click();
 		Thread.sleep(2000);
 		auth.click();

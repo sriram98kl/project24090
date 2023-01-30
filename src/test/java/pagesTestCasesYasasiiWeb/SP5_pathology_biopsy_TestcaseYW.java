@@ -1,5 +1,6 @@
 package pagesTestCasesYasasiiWeb;
 
+import java.awt.AWTException;
 import java.io.IOException;
 
 import org.testng.annotations.AfterClass;
@@ -22,7 +23,7 @@ public class SP5_pathology_biopsy_TestcaseYW extends TestBaseYasasiiWeb  {
 	public void navigateFOPage() throws InterruptedException {
 		
 	this.login =new LoginPageYasasiiWeb(driver) ;
-	this.hm = login.enterloginDetails("admin", "kameda321", "Kameda Medical Center");
+	this.hm = login.enterloginDetails("admin", "KAmeda123$", "Kameda Medical Center");
 	Thread.sleep(2000); 
 	}
 
@@ -41,7 +42,7 @@ public class SP5_pathology_biopsy_TestcaseYW extends TestBaseYasasiiWeb  {
 		}
 	
 	@Test (dataProvider = "getData")
-	public void inestigation(String NAME , String AGE , String MBLNO , String ORGANISATION , String ADDRESS , String AADHAAR,String MRNO ,String PROVIDER ,String SERVICE,String URL, String User , String Password , String site,String SERVICE1) throws InterruptedException, IOException {
+	public void inestigation(String NAME , String AGE , String MBLNO , String ORGANISATION , String ADDRESS , String AADHAAR,String MRNO ,String PROVIDER ,String SERVICE,String URL, String User , String Password , String site,String SERVICE1) throws InterruptedException, IOException, AWTException {
 		
 		
 		SP5_pathology_biopsy_YasassiWeb b22 =new SP5_pathology_biopsy_YasassiWeb(driver);

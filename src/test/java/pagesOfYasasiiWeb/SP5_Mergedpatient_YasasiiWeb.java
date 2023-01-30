@@ -203,7 +203,12 @@ public class SP5_Mergedpatient_YasasiiWeb extends PageFactoryInitYasasiiWeb{
 
 	@FindBy(xpath = "//input[@id='cpoeSearchText']")
 	public WebElement ServiceSearch;
-
+	
+	@FindBy(xpath = "//input[@id='cpoeSearchDb']")
+	public WebElement ServiceSearch1;
+	
+	
+	
 	@FindBy(xpath = "//textarea[@id='clinicalindication']")
 	public WebElement clinicalindication;
 
@@ -306,13 +311,33 @@ public class SP5_Mergedpatient_YasasiiWeb extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath="//span[normalize-space()='Merged']")
 	public WebElement Merged;
 	
+	@FindBy(xpath = "//span[@class='checkmark']")
+	public WebElement billprint;
+	
+	@FindBy(xpath = "//div[@class='item-icon']//i[@class='ki ki-reception-fill']")
+	public WebElement billing;
+	
+	@FindBy(xpath="//li[@class='nav-item disabled ng-star-inserted']")
+	public WebElement Encountermerged;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
 	
 	
 
-	public void patReg(String NAME , String AGE , String MBLNO , String ORGANISATION , String ADDRESS , String AADHAAR,String MRNO ,String PROVIDER ,String SERVICE,String MBLNO2 , String AADHAR2) throws InterruptedException, IOException {
+	public void patReg(String NAME , String AGE , String MBLNO , String ORGANISATION , String ADDRESS , String AADHAAR,String MRNO ,String PROVIDER ,String SERVICE,String MBLNO2 , String AADHAR2 ) throws InterruptedException, IOException {
 
 
 		Thread.sleep(2000);
@@ -398,6 +423,9 @@ public class SP5_Mergedpatient_YasasiiWeb extends PageFactoryInitYasasiiWeb{
 		//////Encounter
 		Thread.sleep(1000);
 		clear.click();
+		Thread.sleep(1000);
+		billprint.click();
+		Thread.sleep(1000);
 		Thread.sleep(1000);
 		providerName.click();
 		Thread.sleep(1000);
@@ -553,6 +581,7 @@ public class SP5_Mergedpatient_YasasiiWeb extends PageFactoryInitYasasiiWeb{
 			Thread.sleep(1000);
 			clear.click();
 			Thread.sleep(1000);
+			billprint.click();
 			providerName.click();
 			Thread.sleep(1000);
 			providerName.sendKeys(PROVIDER);
@@ -683,9 +712,9 @@ public class SP5_Mergedpatient_YasasiiWeb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		Addprocedure.click();
 		Thread.sleep(2000);
-		ServiceSearch.click();
+		ServiceSearch1.clear();
 		Thread.sleep(1000);
-		ServiceSearch.sendKeys(SERVICE);
+		ServiceSearch1.sendKeys(SERVICE);
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//label[normalize-space()='"+SERVICE+"']")).click();
 		Thread.sleep(1000);
@@ -724,11 +753,6 @@ public class SP5_Mergedpatient_YasasiiWeb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		Thread.sleep(1000);
 		medicineAdd.click();
-		
-		
-		
-		
-		
 		
 		Thread.sleep(1000);
 		EmrSave.click();
@@ -954,25 +978,31 @@ public class SP5_Mergedpatient_YasasiiWeb extends PageFactoryInitYasasiiWeb{
         Thread.sleep(1000);
         driver.findElement(By.xpath("//ki-dialog-common//button[@aria-label='Close'][normalize-space()='No']")).click();
         Thread.sleep(1000);
+        act.moveToElement(Appointment).build().perform();
+        Thread.sleep(2000);
         Appointment.click();
-        Thread.sleep(1000);
-        EncounterAdd.click();
-        Thread.sleep(1000);
-        EncounterSave.click();
-        Thread.sleep(1000);
-        SAvesuccess.click();
         Thread.sleep(2000);
         
+        
+        billing.click();
+        Thread.sleep(1000);
+        act.moveToElement(Encountermerged).build().perform();
+        Thread.sleep(2000);
+        Encountermerged.click();
+        Thread.sleep(2000);
+        
+        act.moveToElement(ADT).build().perform();
+        Thread.sleep(2000);
         ADT.click();
         Thread.sleep(1000);
         CPOeView.click();
         Thread.sleep(1000);
         ScheduleApp.click();
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         medicineView.click();
         Thread.sleep(1000);
         PrescriptionPrint.click();
-        Thread.sleep(1000);
+        Thread.sleep(3000);
 
     	Robot t=new Robot();
     	Thread.sleep(1000);
@@ -996,6 +1026,10 @@ public class SP5_Mergedpatient_YasasiiWeb extends PageFactoryInitYasasiiWeb{
 		driver.switchTo().window(tabs.get(m));
 		Thread.sleep(3000);
 
+		EnterPatientName.click();
+		Thread.sleep(1000);
+		EnterPatientName.clear();
+		Thread.sleep(1000);
     	EnterPatientName.sendKeys(MRNo2);
 		Thread.sleep(1500);
 		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNo2+"')])[1]")).click();

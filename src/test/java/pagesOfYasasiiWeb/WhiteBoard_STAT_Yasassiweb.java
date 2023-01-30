@@ -290,7 +290,7 @@ public class WhiteBoard_STAT_Yasassiweb extends PageFactoryInitYasasiiWeb{
 		driver.findElement(By.xpath("//li[normalize-space()='STAT']")).click();
 		
 	///////Medicine REconciliation
-	/*	Thread.sleep(1000);
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("//label[normalize-space()='No Current Medication']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//div[@class='mb10 btn-type-add ta-r']//button[@type='button'][normalize-space()='Add']")).click();
@@ -300,7 +300,7 @@ public class WhiteBoard_STAT_Yasassiweb extends PageFactoryInitYasasiiWeb{
 		driver.findElement(By.xpath("//i[contains(@class,'ki ki-reconciliation')]")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
-		Thread.sleep(1000); */
+		Thread.sleep(1000); 
 	//////////////////////
 		Thread.sleep(1000);
 		driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL , Keys.END);

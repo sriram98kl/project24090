@@ -458,12 +458,15 @@ public class FO_combinationalPAY_DiscRaise_YasassiWeb extends PageFactoryInitYas
 			Thread.sleep(1000);
 			cardNO.sendKeys(CARDNO);
 			approveNO.click();
+			Thread.sleep(1000);
 			approveNO.sendKeys(APPROVENO);
 			Thread.sleep(1000);
 			CardAdd.click();
 			Thread.sleep(3000);
 			CardOK.click();
 			Thread.sleep(1000);
+			driver.findElement(By.xpath("//span[@class='checkmark']")).click();
+	     	Thread.sleep(1000);
 			Save.click();
 			Thread.sleep(2000);
 			//billsave.click();
@@ -496,6 +499,11 @@ public class FO_combinationalPAY_DiscRaise_YasassiWeb extends PageFactoryInitYas
 			Thread.sleep(1000);
 			System.out.println("Adjustment exceeds the limit ");
 			Thread.sleep(1000);
+			driver.findElement(By.xpath("//span[@class='checkmark']")).click();
+	     	Thread.sleep(1000);
+			
+	     	////cardpayment
+	     	
 			debitCard.click();
 			Thread.sleep(1000);
 			provider.click();
@@ -588,12 +596,12 @@ public class FO_combinationalPAY_DiscRaise_YasassiWeb extends PageFactoryInitYas
 
 
 
-			List<WebElement> dynamicElement=driver.findElements(By.xpath("//i[@class='ki ki-print']"));
+			List<WebElement> dynamicElement=driver.findElements(By.xpath("//i[@class='ki pointer ki-info-circle']"));
 			Thread.sleep(1000);
 			int a=dynamicElement.size();
 			System.out.println("a=" +a);
-			//	int b=a-3;
-			//System.out.println("b=" +b);
+			int b=(a/2)-1;
+			System.out.println("b=" +b);
 			//int c=a-2;
 			//	System.out.println("c="+c);
 			Thread.sleep(4000);
@@ -623,7 +631,7 @@ public class FO_combinationalPAY_DiscRaise_YasassiWeb extends PageFactoryInitYas
 			userid.click();
 			userid.sendKeys("admin");
 			password.click();
-			password.sendKeys("kameda321");
+			password.sendKeys("KAmeda123$");
 			Thread.sleep(1000);
 			site.click();
 			Thread.sleep(1000);

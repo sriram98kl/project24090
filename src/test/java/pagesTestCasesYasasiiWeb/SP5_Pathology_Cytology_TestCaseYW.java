@@ -1,5 +1,6 @@
 package pagesTestCasesYasasiiWeb;
 
+import java.awt.AWTException;
 import java.io.IOException;
 
 import org.testng.annotations.AfterClass;
@@ -29,19 +30,19 @@ public class SP5_Pathology_Cytology_TestCaseYW extends TestBaseYasasiiWeb  {
 	
 
 	@Test (dataProvider = "getData" ,priority=0)
-	public void Pathology(String NAME , String AGE , String MBLNO , String ORGANISATION , String ADDRESS , String AADHAAR,String MRNO ,String PROVIDER ,String SERVICE,String URL, String User , String Password , String site) throws InterruptedException, IOException {
+	public void Pathology(String NAME , String AGE , String MBLNO , String ORGANISATION , String ADDRESS , String AADHAAR,String MRNO ,String PROVIDER ,String SERVICE,String URL, String User , String Password , String site ,String User1 , String Password1 , String ADTprovider) throws InterruptedException, IOException, AWTException {
 		
 		
 		SP5_pathology_Cytology_YasasiiWeb c22 =new SP5_pathology_Cytology_YasasiiWeb(driver);
 		
-		c22.patReg(NAME, AGE, MBLNO, ORGANISATION, ADDRESS, AADHAAR, MRNO, PROVIDER, SERVICE);
+		c22.patReg(NAME, AGE, MBLNO, ORGANISATION, ADDRESS, AADHAAR, MRNO, PROVIDER, SERVICE, ADTprovider);
 		
 	
 		
 		}
 	
 	@Test (dataProvider = "getData",priority=1)
-	public void inestigation(String NAME , String AGE , String MBLNO , String ORGANISATION , String ADDRESS , String AADHAAR,String MRNO ,String PROVIDER ,String SERVICE,String URL, String User , String Password , String site) throws InterruptedException, IOException {
+	public void inestigation(String NAME , String AGE , String MBLNO , String ORGANISATION , String ADDRESS , String AADHAAR,String MRNO ,String PROVIDER ,String SERVICE,String URL, String User , String Password , String site,String User1 , String Password1, String ADTprovider) throws InterruptedException, IOException, AWTException {
 		
 		
 		SP5_pathology_Cytology_YasasiiWeb c22 =new SP5_pathology_Cytology_YasasiiWeb(driver);
@@ -50,6 +51,15 @@ public class SP5_Pathology_Cytology_TestCaseYW extends TestBaseYasasiiWeb  {
 		
 			
 		c22.resultEnter(MRNO, URL, User, Password, site);
+		
+		c22.cancerRegistryView(URL, User1, Password1, site, MRNO);
+		
+		
+		
+		
+		
+		
+		
 		}
 	
 	@AfterClass

@@ -52,7 +52,7 @@ public class SP5_Inclinic_yasassiWeb extends  PageFactoryInitYasasiiWeb {
 	@FindBy(xpath = "//input[@id='antibioticorderingremarks']")
 	public WebElement justification;
 
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-emrtemplateloader[1]/div[1]/div[1]/div[2]/div[2]/div[9]/div[1]/app-cpoe-container[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/app-cpoe-pharmacy-prescription[1]/form[1]/div[2]/div[2]/div[11]/app-cpoe-diagnosis-list[1]/div[1]/div[1]/accordion[1]/accordion-group[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/label[1]/span[1]")
+	@FindBy(xpath = "//label[contains(text(),'G91.2')]//span[contains(@class,'checkmark')]")
 	public WebElement diagnosischevckbox;
 
 	@FindBy(xpath = "//label[contains(@class,'check-container ng-star-inserted')]//span[contains(@class,'checkmark')]")
@@ -212,7 +212,7 @@ public class SP5_Inclinic_yasassiWeb extends  PageFactoryInitYasasiiWeb {
 		Thread.sleep(1000);
 		MedicineSearch.sendKeys("Diabeta");
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-emrtemplateloader[1]/div[1]/div[1]/div[2]/div[2]/div[9]/div[1]/app-cpoe-container[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/app-cpoe-pharmacy-list[1]/form[1]/div[1]/div[3]/div[1]/div[1]/div[1]")).click();
+		driver.findElement(By.xpath("//div[@title='Diabeta , 1 No(s)  by Oral']")).click();
 		Thread.sleep(1000);
 		Orderingreason.click();
 		Thread.sleep(1000);
@@ -241,7 +241,7 @@ public class SP5_Inclinic_yasassiWeb extends  PageFactoryInitYasasiiWeb {
 		Thread.sleep(1000);
 		MedicineSearch.sendKeys("calpol");
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-emrtemplateloader[1]/div[1]/div[1]/div[2]/div[2]/div[9]/div[1]/app-cpoe-container[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/app-cpoe-pharmacy-list[1]/form[1]/div[1]/div[3]/div[1]/div[1]/div[1]")).click();
+		driver.findElement(By.xpath("//div[@title='Calpol 120Mg Suspension 60Ml , 5 Ml  by Oral']")).click();
 		Thread.sleep(1000);
 		Frequency.click();
 		Thread.sleep(1000);
@@ -264,15 +264,15 @@ public class SP5_Inclinic_yasassiWeb extends  PageFactoryInitYasasiiWeb {
 		Thread.sleep(1000);
 		MedicineSearch.sendKeys("urifast");
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-emrtemplateloader[1]/div[1]/div[1]/div[2]/div[2]/div[9]/div[1]/app-cpoe-container[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/app-cpoe-pharmacy-list[1]/form[1]/div[1]/div[3]/div[1]/div[1]/div[1]")).click();
+		driver.findElement(By.xpath("//div[@title='Urifast 100Mg Cap, 1 Cap(s)  by Oral']")).click();
 		Thread.sleep(1000);
 		Frequency.click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='TID']")).click();
 		Thread.sleep(1000);
-		js.executeScript("arguments[0].scrollIntoView();",diagnosischevckbox3);
+		js.executeScript("arguments[0].scrollIntoView();",diagnosischevckbox);
 		Thread.sleep(1000);
-		diagnosischevckbox3.click();
+		diagnosischevckbox.click();
 		Thread.sleep(1000);
 		inclinicadmin.click();
 		Thread.sleep(1000);
@@ -494,10 +494,12 @@ public void cpoeAdmin() throws InterruptedException {
 	Thread.sleep(1000);
 	driver.findElement(By.xpath("//label[@class='icon cpoeadmin']")).click();
 	Thread.sleep(1000);
-	driver.findElement(By.xpath("//div[@class='adm-xl-header sm-header']//label[1]")).click();
-	Thread.sleep(1000);
 	driver.findElement(By.xpath("//label[@class='active-due']")).click();
-	
+	Thread.sleep(1000);
+	driver.findElement(By.xpath("//div[contains(@class,'adm-xl-header sm-header')]//label[1]")).click();
+	Thread.sleep(1000);
+//	driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-cpoe-administration[1]/div[1]/div[2]/app-mar-container[1]/div[1]/div[2]/div[1]/label[3]")).click();
+	Thread.sleep(3000);
 	
 }
 

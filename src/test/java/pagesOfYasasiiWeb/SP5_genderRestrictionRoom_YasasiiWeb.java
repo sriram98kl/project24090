@@ -137,11 +137,11 @@ public class SP5_genderRestrictionRoom_YasasiiWeb  extends PageFactoryInitYasasi
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-resourcemaster[1]/div[1]/lib-searchbarlist[1]/div[1]/div[2]/form[1]/div[3]/div[1]/ki-select-control[1]/div[1]/input[1]")).click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//li[normalize-space()='A10 Block']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='A5 Block']")).click();
 		Thread.sleep(1000);
 		//	driver.findElement(By.xpath("//li[normalize-space()='Super-Delux']")).click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("(//*[contains(text(),'GENDER restrict room sri')])")).click();
+		driver.findElement(By.xpath("(//*[contains(text(),'for femal')])")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//span[@id='common_edit_icon_1']//i[@class='ki ki-pencil']")).click();
 		Thread.sleep(1000);
@@ -150,8 +150,8 @@ public class SP5_genderRestrictionRoom_YasasiiWeb  extends PageFactoryInitYasasi
 		driver.findElement(By.xpath("//li[normalize-space()='A5 Block']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("(//*[contains(text(),'for male')])")).click();
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//span[@id='common_edit_icon_0']//i[@class='ki ki-pencil']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//span[@id='common_edit_icon_2']//i[@class='ki ki-pencil']")).click();
 		Thread.sleep(1000);
 
 		//////

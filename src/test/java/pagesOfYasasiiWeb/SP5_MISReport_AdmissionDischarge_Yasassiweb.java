@@ -163,7 +163,8 @@ public class SP5_MISReport_AdmissionDischarge_Yasassiweb  extends PageFactoryIni
 		Thread.sleep(1000);
 		FullScreen.click();
 		Thread.sleep(1000);
-		for (int i = 1; i <=j; i++) {
+		for (int i = 1; i <=2; i++) {
+		//for (int i = 1; i <=j; i++) {
 			driver.findElement(By.xpath("(//div[@class='dxrd-preview-search-tab-item-text propertygrid-editor-displayName dxd-text-primary'])["+i+"]")).click();
 			Thread.sleep(4000);
 		}

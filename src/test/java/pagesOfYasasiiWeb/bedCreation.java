@@ -80,8 +80,8 @@ public class bedCreation extends PageFactoryInitYasasiiWeb{
 
 	public void bed() throws InterruptedException {
 
-		int a=26;
-		char b=86;
+		int a=28;
+		char b=88;
 
 
 		Thread.sleep(2000);
@@ -328,6 +328,8 @@ public class bedCreation extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//span[normalize-space()='Resource Category']")).click();
 		Thread.sleep(1000);
+		Menutoggle.click();
+		Thread.sleep(1000);
 		resourceMaster.click();
 		Thread.sleep(1000);
 
@@ -366,30 +368,95 @@ public class bedCreation extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		bedname.click();
 		Thread.sleep(1000);
-
-		bedname.sendKeys("er-1"+b+"");
+		bedname.sendKeys("ans-"+a+"0");
 		Thread.sleep(1000);
-		bedAdd.click();	
+		bedAdd.click();
 		Thread.sleep(1000);
-		bedname.click();
-		Thread.sleep(1000);
-		bedname.sendKeys("er-2"+b+"");
+		bedname.sendKeys("ans-"+a+"1");
 		Thread.sleep(1000);
 		bedAdd.click();
 		Thread.sleep(1000);
 		bedname.click();
 		Thread.sleep(1000);
-		bedname.sendKeys("er-3"+b+"");
-		Thread.sleep(1000);		
+		bedname.sendKeys("ans-"+a+"2");
+		Thread.sleep(1000);
 		bedAdd.click();
 		Thread.sleep(1000);
 		bedname.click();
 		Thread.sleep(1000);
-		bedname.sendKeys("er-4"+b+"");
+		bedname.sendKeys("ans-"+a+"3");
 		Thread.sleep(1000);
 		bedAdd.click();
-		//input[@id='bedname']
-		Thread.sleep(1000);	
+		Thread.sleep(1000);
+		bedname.click();
+		Thread.sleep(1000);
+		bedname.sendKeys("ans-"+a+"4");
+		Thread.sleep(1000);
+		bedAdd.click();
+		bedname.click();
+		Thread.sleep(1000);
+		bedname.sendKeys("ans-"+a+"5");
+		Thread.sleep(1000);
+		bedAdd.click();
+		bedname.click();
+		Thread.sleep(1000);
+		bedname.sendKeys("ans-"+a+"6");
+		Thread.sleep(1000);
+		bedAdd.click();
+		Thread.sleep(1000);
+		//nurestation.click();
+		Thread.sleep(1000);
+		//driver.findElement(By.xpath("//li[normalize-space()='Ward Nure_Nursing station']")).click();
+		Thread.sleep(1000);
+		bedname.click();
+		Thread.sleep(1000);
+		bedname.sendKeys("ans-"+a+"7");
+		Thread.sleep(1000);
+		bedAdd.click();
+		Thread.sleep(1000);
+		bedname.click();
+		Thread.sleep(1000);
+		bedname.sendKeys("ans-"+a+"8");
+		Thread.sleep(1000);
+		bedAdd.click();
+		Thread.sleep(1000);
+		bedname.click();
+		Thread.sleep(1000);
+		bedname.sendKeys("ans-"+a+"9");
+		Thread.sleep(1000);
+		bedAdd.click();
+		Thread.sleep(1000);
+		bedname.click();
+		Thread.sleep(1000);
+		//	bedname.sendKeys("ans-40");
+		Thread.sleep(1000);
+		bedAdd.click();
+		
+		Thread.sleep(1000);
+		bedname.click();
+		Thread.sleep(1000);
+		bedname.sendKeys("lcn-1"+b+"");
+		Thread.sleep(1000);
+		bedAdd.click();
+		Thread.sleep(1000);
+		bedname.click();
+		Thread.sleep(1000);
+		bedname.sendKeys("lcn-2"+b+"");
+		Thread.sleep(1000);
+		bedAdd.click();
+		Thread.sleep(1000);
+		bedname.click();
+		Thread.sleep(1000);
+		bedname.sendKeys("lcn-3"+b+"");
+		Thread.sleep(1000);
+		bedAdd.click();
+		Thread.sleep(1000);
+		bedname.click();
+		Thread.sleep(1000);
+		bedname.sendKeys("lcn-4"+b+"");
+		Thread.sleep(1000);
+		bedAdd.click();
+		Thread.sleep(1000);
 		update.click();
 		Thread.sleep(2000);   
 

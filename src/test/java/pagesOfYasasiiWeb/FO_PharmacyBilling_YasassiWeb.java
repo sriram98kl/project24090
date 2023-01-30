@@ -511,24 +511,29 @@ public class FO_PharmacyBilling_YasassiWeb  extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		clear.click();
 		Thread.sleep(1000);
+		driver.findElement(By.xpath("//span[@class='checkmark']")).click();
+		Thread.sleep(1000);
 		providerName.click(); 
 		Thread.sleep(1000);
 		providerName.sendKeys(PROVIDER);
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='"+PROVIDER+"']")).click(); 
 
-		Thread.sleep(1000);
+		///Referral 
+		
+		
+/*		Thread.sleep(1000);
 		referal.click();
 		Thread.sleep(1000);
 		hos.click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("//li[normalize-space()='outsider hospital']")).click();
 		Thread.sleep(1000);
 		prov.click();
 		Thread.sleep(1000);
 		///  outsiderref.click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//li[normalize-space()='sreeja']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='sreeja']")).click();   */
 		Thread.sleep(1000);
 		EncounterAdd.click();
 		Thread.sleep(1000);
@@ -542,7 +547,7 @@ public class FO_PharmacyBilling_YasassiWeb  extends PageFactoryInitYasasiiWeb{
 	}
 
 
-	public void pharmacybill(String MRNO , String PROVIDER , String CHEIFCOMPLAINT , String MEDICINE,String id, String docpassword , String Site) throws InterruptedException, AWTException {
+	public void pharmacybill(String MRNO , String PROVIDER , String CHEIFCOMPLAINT , String MEDICINE,String id, String docpassword , String Site ,String AdminID, String AdminPassword) throws InterruptedException, AWTException {
 
 
 
@@ -551,6 +556,8 @@ public class FO_PharmacyBilling_YasassiWeb  extends PageFactoryInitYasasiiWeb{
 		Service.click();	
 		Thread.sleep(1000);
 		AddnewService.click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//span[@class='checkmark']")).click();
 		Thread.sleep(1000);
 		category.click();
 		driver.findElement(By.xpath("//li[normalize-space()='Advance']")).click();
@@ -597,10 +604,10 @@ public class FO_PharmacyBilling_YasassiWeb  extends PageFactoryInitYasasiiWeb{
 		driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 
 
-/*		Hamberger1.click();
+		Hamberger1.click();
 		Thread.sleep(1000);
 		Pharmacy.click();
 		Thread.sleep(1000);
@@ -678,7 +685,7 @@ public class FO_PharmacyBilling_YasassiWeb  extends PageFactoryInitYasasiiWeb{
 		driver.findElement(By.xpath("//button[normalize-space()='Save']")).click();
 		Thread.sleep(1000);
 
-*/
+
 
 
 		/////doctornote
@@ -788,10 +795,10 @@ public class FO_PharmacyBilling_YasassiWeb  extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(2000);
 		userid.click();
 		Thread.sleep(1000);
-		userid.sendKeys("admin");
+		userid.sendKeys(AdminID);
 		Thread.sleep(1000);
 		password.click();
-		password.sendKeys("kameda321");
+		password.sendKeys(AdminPassword);
 		site.click();
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].scrollIntoView();",driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")) );

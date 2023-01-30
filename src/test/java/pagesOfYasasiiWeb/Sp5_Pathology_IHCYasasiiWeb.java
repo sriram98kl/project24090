@@ -475,7 +475,7 @@ public class Sp5_Pathology_IHCYasasiiWeb extends  PageFactoryInitYasasiiWeb {
 		
 		
 		
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		Searchfield.clear();
 		Thread.sleep(1000);
 		Searchfield.sendKeys(MRNO , Keys.ENTER);
@@ -633,26 +633,32 @@ public class Sp5_Pathology_IHCYasasiiWeb extends  PageFactoryInitYasasiiWeb {
 		today.click();
 		Thread.sleep(1000);
 		viewcassete.click();
-		act.moveToElement(biopsyblockCount).doubleClick().build().perform();
-		
-		
-		
+		Thread.sleep(1000);
+		biopsyblockCount.click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//button[@class='btn btn-dark-green active ng-star-inserted']")).click();
+		Thread.sleep(1000);
+		Thread.sleep(3000);
 		
 	String count =driver.findElement(By.xpath("//input[@id='cassettecount']")).getText();
 		
-	int i = Integer.parseInt(count);
-	
-	int k= i+1;
-	String ADJamount = String.valueOf(k);
-
-	
+//	System.out.println("count" + count);
+//	
+//	int i = Integer.parseInt(count);
+//	
+//	int k= i+1;
+//	
+//	String blockcount = String.valueOf(k);
+//	Thread.sleep(1000);
+//	System.out.println("block count" + blockcount);
+	Thread.sleep(1000);
 	    cassetteCount.clear();
 		Thread.sleep(1000);
-		cassetteCount.sendKeys(ADJamount);
+		cassetteCount.sendKeys("4");
 		Thread.sleep(1000);
-		Donebydoc.click();
+		//.click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//li[normalize-space()='Louis Xaviour']")).click();
+	//	driver.findElement(By.xpath("//li[normalize-space()='Louis Xaviour']")).click();
 		Thread.sleep(1000);
 		Donebytech.click();
 		Thread.sleep(1000);
@@ -977,8 +983,9 @@ public class Sp5_Pathology_IHCYasasiiWeb extends  PageFactoryInitYasasiiWeb {
 		ResultEnter.click();
 		Thread.sleep(1000);
 		specimen.click();
-		specimen.sendKeys(null);
-		
+		Thread.sleep(1000);
+		specimen.sendKeys("quade");
+		Thread.sleep(1000);
 		
 		clinicalDetails.clear();	
 		Thread.sleep(1000);

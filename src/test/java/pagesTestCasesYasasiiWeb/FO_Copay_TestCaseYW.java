@@ -23,7 +23,7 @@ public class FO_Copay_TestCaseYW extends TestBaseYasasiiWeb{
 	public void navigateemradt() throws InterruptedException {
 		
 		this.login =new LoginPageYasasiiWeb(driver) ;
-		this.hm = login.enterloginDetails("admin", "kameda321", "Kameda Medical Center");
+		this.hm = login.enterloginDetails("admin", "KAmeda123$", "Kameda Medical Center");
 		Thread.sleep(4000);
 		
 	}

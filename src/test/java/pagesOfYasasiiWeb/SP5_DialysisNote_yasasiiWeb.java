@@ -1,5 +1,8 @@
 package pagesOfYasasiiWeb;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -277,7 +280,7 @@ public class SP5_DialysisNote_yasasiiWeb  extends PageFactoryInitYasasiiWeb{
 
 
 
-	public void PatReg(String NAME,String AGE, String MBLNO , String ORGANISATION, String ADDRESS , String AADHAAR , String PROVIDER) throws InterruptedException, IOException {
+	public void PatReg(String NAME,String AGE, String MBLNO , String ORGANISATION, String ADDRESS , String AADHAAR , String PROVIDER) throws InterruptedException, IOException, AWTException {
 
 		Thread.sleep(2000);
 		Title.click();
@@ -374,7 +377,11 @@ public class SP5_DialysisNote_yasasiiWeb  extends PageFactoryInitYasasiiWeb{
 		WebDriverWait wait = new WebDriverWait(driver,30);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@title='Two Years Registration']")));
 		EncounterSave.click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
+		Robot r=new Robot(); 
+		r.keyPress(KeyEvent.VK_ENTER);
+		r.keyRelease(KeyEvent.VK_ENTER);
+		Thread.sleep(800);
 		SAvesuccess.click();
 		Thread.sleep(1000);
 

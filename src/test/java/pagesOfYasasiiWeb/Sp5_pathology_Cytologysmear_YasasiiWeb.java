@@ -1004,10 +1004,9 @@ public class Sp5_pathology_Cytologysmear_YasasiiWeb extends  PageFactoryInitYasa
 		driver.findElement(By.xpath("//button[@class='rounded-1 btn btn-sm btn-red clear']//i[@class='ki ki-clear-back']")).click();
 		Thread.sleep(1000);
 
-		
-
-
-
-	}
+		}
+	
+	
+	
 
 }

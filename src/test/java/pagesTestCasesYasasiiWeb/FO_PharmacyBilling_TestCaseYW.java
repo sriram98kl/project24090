@@ -28,14 +28,14 @@ public class FO_PharmacyBilling_TestCaseYW  extends TestBaseYasasiiWeb {
 	public void navigateFOPage() throws InterruptedException {
 		
 	this.login =new LoginPageYasasiiWeb(driver) ;
-	this.hm = login.enterloginDetails("admin", "kameda321", "Kameda Medical Center");
+	this.hm = login.enterloginDetails("admin", "KAmeda123$", "Kameda Medical Center");
 	Thread.sleep(2000); 
 	}
 
 	
 
 	@Test (dataProvider = "getData",priority=0)
-	public void pharmacy( String CHEIFCOMPLAINT , String MEDICINE,String doctor,String id, String docpassword,String Site,String NAME , String AGE , String MBLNO , String ORGANISATION , String ADDRESS , String AADHAAR,String MRNO , String PROVIDER) throws InterruptedException, IOException {
+	public void pharmacy( String CHEIFCOMPLAINT , String MEDICINE,String doctor,String id, String docpassword,String Site,String NAME , String AGE , String MBLNO , String ORGANISATION , String ADDRESS , String AADHAAR,String MRNO , String PROVIDER,String AdminID, String AdminPassword) throws InterruptedException, IOException {
 		
 	
 				
@@ -50,14 +50,14 @@ public class FO_PharmacyBilling_TestCaseYW  extends TestBaseYasasiiWeb {
 	
 	
 	@Test (dataProvider = "getData" , priority=1)
-	public void pharmacy1( String CHEIFCOMPLAINT , String MEDICINE,String doctor,String id, String docpassword,String Site,String NAME , String AGE , String MBLNO , String ORGANISATION , String ADDRESS , String AADHAAR,String MRNO , String PROVIDER) throws InterruptedException, IOException, AWTException {
+	public void pharmacy1( String CHEIFCOMPLAINT , String MEDICINE,String doctor,String id, String docpassword,String Site,String NAME , String AGE , String MBLNO , String ORGANISATION , String ADDRESS , String AADHAAR,String MRNO , String PROVIDER,String AdminID, String AdminPassword) throws InterruptedException, IOException, AWTException {
 		
 	
 				
 		FO_PharmacyBilling_YasassiWeb  bill = new   FO_PharmacyBilling_YasassiWeb (driver);
 		
 		
-		 bill.pharmacybill(MRNO, PROVIDER, CHEIFCOMPLAINT, MEDICINE,id,docpassword , Site);
+		 bill.pharmacybill(MRNO, PROVIDER, CHEIFCOMPLAINT, MEDICINE,id,docpassword , Site, AdminID, AdminPassword);
 		
 	}
 	@AfterClass

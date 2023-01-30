@@ -28,7 +28,7 @@ public class Sp5_Pathology_IHCTestCaseYW extends TestBaseYasasiiWeb  {
 
 	
 
-//	@Test (dataProvider = "getData")
+    @Test (dataProvider = "getData")
 	public void Pathology(String NAME , String AGE , String MBLNO , String ORGANISATION , String ADDRESS , String AADHAAR,String MRNO ,String PROVIDER ,String SERVICE,String URL, String User , String Password , String site,String SERVICE1) throws InterruptedException, IOException {
 		
 		

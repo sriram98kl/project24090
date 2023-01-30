@@ -16,6 +16,7 @@ public class FO_EncounterTypes_YasassiWeb extends PageFactoryInitYasasiiWeb {
 	public FO_EncounterTypes_YasassiWeb(WebDriver driver) {
 		super(driver);
 	}
+	
 	@FindBy(xpath = "//div[contains(@class,'col-md-3')]//div[contains(@class,'card-body')]//div[2]//div[1]//div[1]//ki-select-control[1]//div[1]//input[1]")
 	public WebElement Title;
 

@@ -1,5 +1,8 @@
 package pagesOfYasasiiWeb;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,6 +12,8 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.baseYasasiiWeb.PageFactoryInitYasasiiWeb;
 
@@ -72,7 +77,7 @@ public class SP5_OrdersetFormulatory_YasassiWeb  extends  PageFactoryInitYasasii
 	@FindBy(xpath="//i[@class='ki ki-cog']")
 	public WebElement master;
 
-	@FindBy(xpath="/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-asideleftbar[1]/aside[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/span[1]")
+	@FindBy(xpath="//span[contains(text(),'Pharmacy')]")
 	public WebElement pharmacy;
 
 	@FindBy(xpath="//span[normalize-space()='Formulary Master']")
@@ -116,7 +121,7 @@ public class SP5_OrdersetFormulatory_YasassiWeb  extends  PageFactoryInitYasasii
 	public WebElement DiagnosisCheckbox;
 
 
-	@FindBy(xpath = "//div[@class='modal-dialog modal-md']//div[@class='modal-footer']//button[@aria-label='Close']")
+	@FindBy(xpath = "//button[normalize-space()='Ok']")
 	public WebElement formulatoryblockOK;
 
 	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-orderset-container[1]/div[1]/lib-searchbarlist[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ki-input-control[1]/div[1]/input[1]")
@@ -128,7 +133,7 @@ public class SP5_OrdersetFormulatory_YasassiWeb  extends  PageFactoryInitYasasii
 	@FindBy(xpath = "//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok']")
 	public WebElement yes;
 
-	public void orderset(String ORDERNAME,String URL , String User ,String Password,String sitename, String MRNO , String medicine) throws InterruptedException {
+	public void orderset(String ORDERNAME,String URL , String User ,String Password,String sitename, String MRNO , String medicine) throws InterruptedException, AWTException {
 
 
 		///orderSet
@@ -164,8 +169,13 @@ public class SP5_OrdersetFormulatory_YasassiWeb  extends  PageFactoryInitYasasii
 		Add.click();
 		Thread.sleep(1000);
 		Save.click();
-		Thread.sleep(2000);
-
+		Thread.sleep(3000);
+		Robot t=new Robot();
+		t.keyPress(KeyEvent.VK_ESCAPE);
+		t.keyRelease(KeyEvent.VK_ESCAPE);
+		Thread.sleep(1000);
+		
+		
 		//master formulatory
 
 		((JavascriptExecutor)driver).executeScript("window.open()");
@@ -215,6 +225,10 @@ public class SP5_OrdersetFormulatory_YasassiWeb  extends  PageFactoryInitYasasii
 		Thread.sleep(1000);
 		SaveSite.click();
 		Thread.sleep(1000);
+		
+		WebDriverWait wait = new WebDriverWait(driver,30);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@id='saveSite']")));
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
 		Thread.sleep(1000);
 		int n =driver.getWindowHandles().size();
@@ -275,18 +289,24 @@ public class SP5_OrdersetFormulatory_YasassiWeb  extends  PageFactoryInitYasasii
 		Thread.sleep(1000);
 		medicineSearch.sendKeys(ORDERNAME, Keys.ENTER);
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("(//*[contains(text(),'"+ORDERNAME+"')])[1]")).click();
+		driver.findElement(By.xpath("//label[normalize-space()='"+ORDERNAME+"']")).click();
+	//	driver.findElement(By.xpath("//*[contains(text(),'"+ORDERNAME+"')]")).click();
 		Thread.sleep(1000);
 		AddOrderset.click();
 		Thread.sleep(1000);
+		driver.findElement(By.xpath("//label[normalize-space()='Inclinic Prescription']//span[@class='checkmark']")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//button[normalize-space()='Ok']//i[@class='ki ki-check']")).click();
+		Thread.sleep(1000);
 		DiagnosisCheckbox.click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//modal-container[@role='dialog']//button[1]")).click();
-		Thread.sleep(3000);
+		driver.findElement(By.xpath("//button[normalize-space()='Ok']")).click();
+		Thread.sleep(1000);
 		formulatoryblockOK.click();
 		Thread.sleep(2000);
-		///orderSet
-		hamberger.click();
+		
+		///orderSet                    
+		hamberger.click();            
 		Thread.sleep(1000);
 		EMR.click();
 		Thread.sleep(1000);
@@ -298,7 +318,7 @@ public class SP5_OrdersetFormulatory_YasassiWeb  extends  PageFactoryInitYasasii
 		Thread.sleep(1000);
 		ordersetSearch.sendKeys(ORDERNAME , Keys.ENTER);
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("(//*[contains(text(),'"+ORDERNAME+"')])[1]")).click();
+		driver.findElement(By.xpath("//div[@title='"+ORDERNAME+"']")).click();
 		Thread.sleep(1000);
 		delete.click();
 		Thread.sleep(1000);

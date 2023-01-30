@@ -21,7 +21,7 @@ public class BlockandFreezeTestCasesYW  extends TestBaseYasasiiWeb{
 		
 		
 	this.login =new LoginPageYasasiiWeb(driver) ;
-	this.hm = login.enterloginDetails("admin","kameda321", "Kameda Medical Center");
+	this.hm = login.enterloginDetails("admin","KAmeda123$", "Kameda Medical Center");
 	Thread.sleep(1000);
 		
 	}    

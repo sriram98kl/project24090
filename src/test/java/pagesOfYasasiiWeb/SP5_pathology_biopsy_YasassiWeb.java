@@ -1,5 +1,8 @@
 package pagesOfYasasiiWeb;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -323,9 +326,47 @@ public class SP5_pathology_biopsy_YasassiWeb extends  PageFactoryInitYasasiiWeb 
 	@FindBy(xpath="//i[@title='Critical result informed']")
 	public WebElement criticalInformed;
 
+	@FindBy(xpath="//i[@class='ki ki-edit-log']")
+	public WebElement resultlog;
 
+	@FindBy(xpath="//i[@class='ki ki-file-template']")
+	public WebElement preview;
 	
-
+	@FindBy(xpath="//span[normalize-space()='Result Authorization']")
+	public WebElement ResultAuth;
+	
+	@FindBy(xpath="//i[@class='ki ki-print']")
+	public WebElement print;
+	
+	@FindBy(xpath="//label[normalize-space()='With header']//span[@class='checkmark']")
+	public WebElement HeaderCheckmark;
+	
+	@FindBy(xpath="//span[@class='checkmark']")
+	public WebElement printcheck;
+	
+	@FindBy(xpath="//i[@title='Addendum']")
+	public WebElement Addendum;
+	
+	@FindBy(xpath="//textarea[@id='addendum']")
+	public WebElement AddendumTestarea;
+	
+	@FindBy(xpath="//textarea[@id='unauthorizationremarks']")
+	public WebElement unauthorizeReason;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 
 
@@ -416,6 +457,8 @@ public class SP5_pathology_biopsy_YasassiWeb extends  PageFactoryInitYasasiiWeb 
 		Thread.sleep(1000);
 		clear.click();
 		Thread.sleep(1000);
+		printcheck.click();
+	    Thread.sleep(1000);
 		providerName.click();
 		Thread.sleep(1000);
 		providerName.sendKeys(PROVIDER);
@@ -447,11 +490,13 @@ public class SP5_pathology_biopsy_YasassiWeb extends  PageFactoryInitYasasiiWeb 
 		Thread.sleep(1000);
 		Thread.sleep(1000);
 		Add.click();
-		Thread.sleep(1000); 
-		Saveservice.click();
 		Thread.sleep(1000);
+		printcheck.click();
+	    Thread.sleep(1000);
+	    Saveservice.click();
+		Thread.sleep(2000);
 		SaveOK.click();
-
+		Thread.sleep(1000);
 
 	}
 
@@ -542,10 +587,12 @@ public class SP5_pathology_biopsy_YasassiWeb extends  PageFactoryInitYasasiiWeb 
 		Recieve.click();
 		Thread.sleep(2000);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//i[@class='ki ki-sample-check']")));
+		Thread.sleep(1000);
 		Accept.click();
 		Thread.sleep(2000);
 		
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//i[@class='ki ki-microscope pl-3']")));
+		Thread.sleep(2000);
 		pathologyProcess.click();
 		Thread.sleep(1000);
 		///////////////grossing
@@ -797,78 +844,10 @@ public class SP5_pathology_biopsy_YasassiWeb extends  PageFactoryInitYasasiiWeb 
 	}
 
 
-	public void resultEnter(String MRNO, String URL , String User , String Password , String site) throws InterruptedException {
+	public void resultEnter(String MRNO, String URL , String User , String Password , String site) throws InterruptedException, AWTException {
 		
 		
-		
-		
-		
-		
-//		
-//		((JavascriptExecutor)driver).executeScript("window.open()");
-//		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
-//		driver.switchTo().window(tabs.get(1));
-//		driver.switchTo().window(tabs.get(1));
-//		Thread.sleep(3000);
-//		driver.get(URL);
-//
-//
-//		Thread.sleep(2000);
-//		userid.click();
-//		Thread.sleep(1000);
-//		userid.sendKeys(User);
-//		Thread.sleep(1000);
-//		password.click();
-//		Thread.sleep(1000);
-//		password.sendKeys(Password);
-//		Thread.sleep(1000);
-//		Site.click();
-//		Thread.sleep(1000);
-//		JavascriptExecutor js= (JavascriptExecutor) driver;
-//		js.executeScript("arguments[0].scrollIntoView();",driver.findElement(By.xpath("//li[normalize-space()='"+site+"']")) );
-//
-//		driver.findElement(By.xpath("//li[normalize-space()='"+site+"']")).click();
-//		Thread.sleep(1000);
-//		driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
-//		Thread.sleep(2000);
-//
-//
-//		Hamberger.click();
-//		Thread.sleep(1000);
-//		Investigation.click();
-//		Thread.sleep(1000);
-//		Executionloc.click();
-//		Thread.sleep(1000);
-//		driver.findElement(By.xpath("//li[normalize-space()='6th Level Execution']")).click();
-//		Thread.sleep(1000);
-//		ExecutionlocOK.click();
-//		Thread.sleep(1000);
-//		confirmOK.click();
-//		Thread.sleep(1000);
-//		Thread.sleep(2000);
-//		investHAmb.click();
-//		Thread.sleep(1000);
-//		SampleProcessing.click();
-//		Thread.sleep(1000);
-//		
-//		Thread.sleep(2000);
-//		ivstgnStatus.click();
-//		Thread.sleep(1000);
-//		driver.findElement(By.xpath("//li[normalize-space()='Sample Processing']")).click();
-//		Thread.sleep(1000);
-//		SearchField.clear();
-//		Thread.sleep(1000);
-//		Thread.sleep(1000);
-//		SearchField.sendKeys(MRNO , Keys.ENTER);
-//		Thread.sleep(1000);
-//		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNO+"')])[1]")).click();
-//		Thread.sleep(1000);
-//		
-		
-		
-		
-		
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		ResultEnter.click();
 		Thread.sleep(1000);
 		clinicalDetails.clear();	
@@ -926,7 +905,27 @@ public class SP5_pathology_biopsy_YasassiWeb extends  PageFactoryInitYasasiiWeb 
 		// close.click();
 		ReportSave.click();
 		Thread.sleep(5000);
+		
+
+		Thread.sleep(1000);
+		resultlog.click();
+		Thread.sleep(1000);
+		preview.click();
+		Thread.sleep(1000);
+		String biopsyno =driver.findElement(By.xpath("/html[1]/body[1]/modal-container[2]/div[1]/div[1]/div[2]/span[1]/div[1]/p[1]/span[2]")).getText();
+		Thread.sleep(1000);
+		System.out.println(biopsyno);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//button[contains(@class,'btn btn-danger sm clear')]")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
+		Thread.sleep(1000);
+		
+		
+		
+		
 		driver.findElement(By.xpath("//i[@class='ki ki-lock ki-lock-open']")).click();
+		Thread.sleep(1000);
 		/////critical informed
 		Range.click();
 		Thread.sleep(1000);
@@ -940,15 +939,21 @@ public class SP5_pathology_biopsy_YasassiWeb extends  PageFactoryInitYasasiiWeb 
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='Critical Result not informed']")).click();
 		Thread.sleep(1000);
+		
+	
+		
+		
+		
+		
+		////Critical call informed
+		
 		SearchField.clear();
 		Thread.sleep(1000);
 		Thread.sleep(1000);
-		SearchField.sendKeys(MRNO , Keys.ENTER);
+		SearchField.sendKeys(biopsyno , Keys.ENTER);
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNO+"')])[1]")).click();
 		Thread.sleep(2000);
-		
-		
 		criticalCall.click();
 		Thread.sleep(2000);
 		callStatus.click();
@@ -978,13 +983,64 @@ public class SP5_pathology_biopsy_YasassiWeb extends  PageFactoryInitYasasiiWeb 
 		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-resultentry[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/span[1]/button[1]")).click();
 		
 		//ivstgnSave.click();//button[@id='onSaveid']
-		Thread.sleep(3000);
+	/*	Thread.sleep(3000);
+		ivstgnStatus.click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//li[normalize-space()='First Level Authorized']")).click();
+		Thread.sleep(1000); */
+		
+		System.out.println(MRNO);
+		
+	
+		
+		ivstgnSave.click();
+		Thread.sleep(2000);
+		
+		
+		/////////unAuthorize
+		
+		
 		ivstgnStatus.click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='First Level Authorized']")).click();
 		Thread.sleep(1000);
+		driver.findElement(By.xpath("//i[@class='ki ki-search']")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNO+"')])[1]")).click();
+		Thread.sleep(1000);
+		Resulttatus.click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//li[normalize-space()='Unauthorized']")).click();
+		Thread.sleep(1000);
+		unauthorizeReason.click();
+		Thread.sleep(1000);
+		unauthorizeReason.sendKeys("Prepare the Cucumber environment in less than 5 minutes\r\n"
+				+ "Write a feature file and step definition in less than 5 minutes\r\n"
+				+ "Understand the role of feature files and the Gherkin business language syntax");
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//div[@class='modal-footer']//button[@type='button'][normalize-space()='OK']")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-resultentry[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/span[1]/button[1]")).click();
+		Thread.sleep(1000);
+	///////first level Authorize	
 		SearchField.clear();
 		Thread.sleep(1000);
+		SearchField.sendKeys(MRNO , Keys.ENTER);
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNO+"')])[1]")).click();
+		Thread.sleep(1000);
+		Resulttatus.click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//li[normalize-space()='First Level Authorized']")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-resultentry[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/span[1]/button[1]")).click();
+		
+		
+		
+		//////////second level authorize
+		
+		
+		SearchField.clear();
 		Thread.sleep(1000);
 		SearchField.sendKeys(MRNO , Keys.ENTER);
 		Thread.sleep(1000);
@@ -995,7 +1051,7 @@ public class SP5_pathology_biopsy_YasassiWeb extends  PageFactoryInitYasasiiWeb 
 		driver.findElement(By.xpath("//li[normalize-space()='Second Level Authorized']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-resultentry[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/span[1]/button[1]")).click();
-		//ivstgnSave.click();
+	//	ivstgnSave.click();
 		Thread.sleep(3000);
 		ivstgnStatus.click();
 		Thread.sleep(1000);
@@ -1022,12 +1078,52 @@ public class SP5_pathology_biopsy_YasassiWeb extends  PageFactoryInitYasasiiWeb 
 		driver.findElement(By.xpath("//button[@class='btn btn-danger sm ml10'][normalize-space()='Close']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[@class='rounded-1 btn btn-sm btn-red clear']//i[@class='ki ki-clear-back']")).click();
+		Thread.sleep(2000);
+
+		investHAmb.click();
 		Thread.sleep(1000);
-
+		ResultAuth.click();
+		Thread.sleep(1000);
+		ivstgnStatus.click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//li[normalize-space()='Second Level Authorized']")).click();
+		Thread.sleep(1000);
+		SearchField.clear();
+		Thread.sleep(1000);
+		SearchField.sendKeys(MRNO , Keys.ENTER);
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNO+"')])[1]")).click();
+		Thread.sleep(1000);
+		print.click();
+		Thread.sleep(4000);
+		Robot t=new Robot();
+		t.keyPress(KeyEvent.VK_ESCAPE);
+		Thread.sleep(1000);
+		t.keyRelease(KeyEvent.VK_ESCAPE);
+		Thread.sleep(1000);
+		HeaderCheckmark.click();
+		Thread.sleep(1000);
+		print.click();
+		Thread.sleep(4000);
+	
+		t.keyPress(KeyEvent.VK_ESCAPE);
+		Thread.sleep(1000);
+		t.keyRelease(KeyEvent.VK_ESCAPE);
+		Thread.sleep(1000);
 		
-
-
-
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 }

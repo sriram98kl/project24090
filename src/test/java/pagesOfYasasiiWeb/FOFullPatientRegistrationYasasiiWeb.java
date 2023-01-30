@@ -229,15 +229,7 @@ public class FOFullPatientRegistrationYasasiiWeb extends PageFactoryInitYasasiiW
 
 		Thread.sleep(500);
 		
-		/*
-		 * WebElement camera=driver.findElement(By.xpath(
-		 * "//body/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-frontoffice-patientregistration[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/label[2]/i[1]"
-		 * )); WebElement camerasel=driver.findElement(By.xpath(
-		 * "//body/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-frontoffice-patientregistration[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/label[2]/i[1]"
-		 * )); act.moveToElement(camera).build().perform(); Thread.sleep(1000);
-		 * act.moveToElement(camerasel).click().build().perform(); Thread.sleep(5000);
-		 * takeasnap.click();
-		 */
+		
 ////////////////Register a patient
 		
 		title.click();
